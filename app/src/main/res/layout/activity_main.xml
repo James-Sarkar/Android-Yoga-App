@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context="com.example.nexus.yogafitnessapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/training_button"
+        android:layout_centerInParent="true"
+        android:src="@drawable/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            
+            <Button
+                android:id="@+id/exercises_button"
+                android:text="@string/exercises"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:shadowColor="@color/colorPrimaryDark" />
+                <!--android:shado="true"-->
+                <!--android:shadowHeight="2dp"-->
+                <!--android:cornerRadius="2dp" -->
+
+            <Button
+                android:id="@+id/settings_button"
+                android:text="@string/settings"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:shadowColor="@color/colorPrimaryDark"/>
+                <!--android:shadowEnabled="true"-->
+                <!--android:shadowHeight="2dp"-->
+                <!--android:cornerRadius="2dp" -->
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/calendar_button"
+            android:text="@string/calendar"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:shadowColor="@color/colorPrimaryDark"/>
+            <!--android:shadowEnabled="true"-->
+            <!--android:shadowHeight="2dp"-->
+            <!--android:cornerRadius="0dp" -->
+
+    </LinearLayout>
+
+</RelativeLayout>

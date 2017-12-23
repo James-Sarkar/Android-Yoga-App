@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">YogaFitnessApp</string>
+    <string name="exercises">Exercises</string>
+    <string name="settings">Settings</string>
+    <string name="calendar">Calendar</string>
+    <string name="view_exercises">View Exercises</string>
+</resources>
