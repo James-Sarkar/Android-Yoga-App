@@ -26,13 +26,13 @@ public class ListExercises extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_exercises);
 
-
         initData();
 
         recyclerView = (RecyclerView) findViewById(R.id.list_exercises);
         recyclerViewAdapter = new RecyclerViewAdapter(exerciseList, getBaseContext());
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(recyclerViewAdapter);
     }
 
     private void initData() {

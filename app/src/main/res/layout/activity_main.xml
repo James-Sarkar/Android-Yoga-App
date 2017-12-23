@@ -37,9 +37,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 android:shadowColor="@color/colorPrimaryDark" />
-                <!--android:shado="true"-->
-                <!--android:shadowHeight="2dp"-->
-                <!--android:cornerRadius="2dp" -->
 
             <Button
                 android:id="@+id/settings_button"
@@ -51,10 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                android:shadowColor="@color/colorPrimaryDark"/>
-                <!--android:shadowEnabled="true"-->
-                <!--android:shadowHeight="2dp"-->
-                <!--android:cornerRadius="2dp" -->
+                android:shadowColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
 
@@ -69,10 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:shadowColor="@color/colorPrimaryDark"/>
-            <!--android:shadowEnabled="true"-->
-            <!--android:shadowHeight="2dp"-->
-            <!--android:cornerRadius="0dp" -->
+            android:shadowColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 

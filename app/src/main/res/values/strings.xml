@@ -4,4 +4,8 @@
     <string name="settings">Settings</string>
     <string name="calendar">Calendar</string>
     <string name="view_exercises">View Exercises</string>
+    <string name="view_exercise">View Exercise</string>
+    <string name="exercise_name">Exercise Name</string>
+    <string name="start">START</string>
+    <string name="_20">20</string>
 </resources>

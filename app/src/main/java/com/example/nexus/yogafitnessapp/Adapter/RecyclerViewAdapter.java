@@ -76,7 +76,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
             public void onClick(View view, int position) {
 
                 // Call new activity
-                Toast.makeText(context, "Click for " + exerciseList.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, exerciseList.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }
