@@ -1,6 +1,7 @@
 package com.example.nexus.yogafitnessapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.nexus.yogafitnessapp.Interface.ItemClickListener;
 import com.example.nexus.yogafitnessapp.Model.Exercise;
 import com.example.nexus.yogafitnessapp.R;
+import com.example.nexus.yogafitnessapp.ViewExercise;
 
 import java.util.List;
 
@@ -76,7 +78,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
             public void onClick(View view, int position) {
 
                 // Call new activity
-                Toast.makeText(context, exerciseList.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ViewExercise.class);
+                intent.putExtra("imageId", exerciseList.get(position).getImageId());
+                intent.putExtra("name", exerciseList.get(position).getName());
+                context.startActivity(intent);
             }
         });
     }
