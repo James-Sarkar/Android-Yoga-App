@@ -1,7 +1,12 @@
 package com.example.nexus.yogafitnessapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -11,6 +16,9 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class Settings extends AppCompatActivity {
 
@@ -68,7 +76,30 @@ public class Settings extends AppCompatActivity {
     private void saveAlarm(boolean checked) {
 
         if (checked) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
+            Intent intent;
+
+            PendingIntent pendingIntent;
+
+            intent = new Intent(Settings.this, AlarmNotificationReceiver.class);
+            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+            // Set time for te alarm
+            Calendar calendar = Calendar.getInstance();
+            Date today = Calendar.getInstance().getTime();
+            calendar.set(today.getYear(), today.getMonth(), today.getDay(), timePicker.getHour(), timePicker.getMinute());
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+            Log.d("DEBUG", "Alarm:                                   "+timePicker.getHour()+":"+timePicker.getMinute());
+        } else {
+            // Cancel alarm
+            Intent intent = new Intent(Settings.this, AlarmNotificationReceiver.class);
+
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmManager.cancel(pendingIntent);
         }
     }
 

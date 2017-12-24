@@ -21,6 +21,7 @@
         <activity android:name=".ListExercises" />
         <activity android:name=".ViewExercise" />
         <activity android:name=".Settings"></activity>
+        <receiver android:name=".AlarmNotificationReceiver"></receiver>
     </application>
 
 </manifest>
