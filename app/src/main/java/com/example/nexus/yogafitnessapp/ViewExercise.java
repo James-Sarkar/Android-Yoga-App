@@ -21,6 +21,9 @@ public class ViewExercise extends AppCompatActivity {
 
     Button startButton;
 
+    boolean timerIsRunning = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,19 +38,27 @@ public class ViewExercise extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new CountDownTimer(20000, 1000) {
+                if (!timerIsRunning) {
+                    startButton.setText("STOP");
+                    new CountDownTimer(20000, 1000) {
 
-                    @Override
-                    public void onTick(long l) {
-                        timer.setText(""+1/1000);
-                    }
+                        @Override
+                        public void onTick(long l) {
+                            timer.setText(""+l/1000);
+                        }
 
-                    @Override
-                    public void onFinish() {
-                        Toast.makeText(ViewExercise.this, "Done!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }.start();
+                        @Override
+                        public void onFinish() {
+                            Toast.makeText(ViewExercise.this, "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }.start();
+                } else {
+                    Toast.makeText(ViewExercise.this, "Done!", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
+                timerIsRunning = !timerIsRunning;
             }
         });
 
