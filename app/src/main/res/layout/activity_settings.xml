@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nexus.yogafitnessapp.Settings">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <RadioButton
+                android:id="@+id/easy_button"
+                android:text="@string/easy"
+                android:layout_weight="1"
+                android:theme="@style/MyRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/medium_button"
+                android:text="@string/medium"
+                android:layout_weight="1"
+                android:theme="@style/MyRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/hard_button"
+                android:text="@string/hard"
+                android:layout_weight="1"
+                android:theme="@style/MyRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </android.support.v7.widget.CardView>
+
+    <ToggleButton
+        android:id="@+id/switch_alarm"
+        android:layout_below="@id/card_view"
+        android:layout_centerHorizontal="true"
+        android:textOn="@string/on"
+        android:textOff="@string/off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TimePicker>
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/save_button"
+        android:layout_alignParentBottom="true"
+        android:text="@string/save"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:shadowColor="@color/colorPrimaryDark" />
+
+</RelativeLayout>

@@ -8,4 +8,10 @@
     <string name="exercise_name">Exercise Name</string>
     <string name="start">START</string>
     <string name="_20">20</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="save">Save</string>
 </resources>

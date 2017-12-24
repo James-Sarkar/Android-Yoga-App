@@ -23,7 +23,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(inten);
             }
         });
+
         settingsButton = (Button) findViewById(R.id.settings_button);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inten = new Intent(MainActivity.this, Settings.class);
+                startActivity(inten);
+            }
+        });
+
         calendarButton = (Button) findViewById(R.id.calendar_button);
 
 

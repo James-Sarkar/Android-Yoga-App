@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
+import com.example.nexus.yogafitnessapp.Utils.Common;
+
 public class ViewExercise extends AppCompatActivity {
 
     int imageId;
@@ -23,11 +26,14 @@ public class ViewExercise extends AppCompatActivity {
 
     boolean timerIsRunning = false;
 
+    YogaAndroidDB yogaAndroidDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_exercise);
+
+        yogaAndroidDB = new YogaAndroidDB(this);
 
         timer = (TextView) findViewById(R.id.timer);
         timer.setText("");
@@ -40,7 +46,18 @@ public class ViewExercise extends AppCompatActivity {
             public void onClick(View view) {
                 if (!timerIsRunning) {
                     startButton.setText("STOP");
-                    new CountDownTimer(20000, 1000) {
+
+                    int timeLimit = 0;
+
+                    if (yogaAndroidDB.getSettingsMode() == 0) {
+                        timeLimit = Common.TIME_LIMIT_EASY;
+                    } else if (yogaAndroidDB.getSettingsMode() == 1) {
+                        timeLimit = Common.TIME_LIMIT_MEDIUM;
+                    } else if (yogaAndroidDB.getSettingsMode() == 2) {
+                        timeLimit = Common.TIME_LIMIT_HARD;
+                    }
+
+                    new CountDownTimer(timeLimit, 1000) {
 
                         @Override
                         public void onTick(long l) {
