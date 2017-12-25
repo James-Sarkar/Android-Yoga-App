@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by James Sarkar.
  */
@@ -15,9 +18,13 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     private static final String DB_NAME = "YogaAndroid.db";
 
-    private static final String TABLE_NAME = "Settings";
+    private static final String SETTINGS_TABLE_NAME = "Settings";
+
+    private static final String WORKOUT_DAYS_TABLE_NAME = "WorkoutDays";
 
     private static final String MODE_COLUMN_NAME = "Mode";
+
+    private static final String DAY_COLUMN_NAME = "Day";
 
     private static final int DB_VERSION = 1;
 
@@ -33,7 +40,7 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
         String[] sqlSelect = {MODE_COLUMN_NAME};
 
-        queryBuilder.setTables(TABLE_NAME);
+        queryBuilder.setTables(SETTINGS_TABLE_NAME);
 
         Cursor cursor = queryBuilder.query(database, sqlSelect, null, null, null, null, null);
         cursor.moveToFirst();
@@ -45,7 +52,40 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
     public void saveSettingsMode(int value) {
 
         SQLiteDatabase database = getReadableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + MODE_COLUMN_NAME + " = "  + value;
+        String query = "UPDATE " + SETTINGS_TABLE_NAME + " SET " + MODE_COLUMN_NAME + " = "  + value;
+        database.execSQL(query);
+    }
+
+    // Retrieve workout days from db
+    public List<String> getWorkOutDays() {
+
+        SQLiteDatabase database = getReadableDatabase();
+        SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+
+        String[] sqlSelect = {DAY_COLUMN_NAME};
+
+        queryBuilder.setTables(WORKOUT_DAYS_TABLE_NAME);
+
+        Cursor cursor = queryBuilder.query(database, sqlSelect, null, null, null, null, null);
+
+        List<String> workoutDays = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                workoutDays.add(cursor.getString(cursor.getColumnIndex(DAY_COLUMN_NAME)));
+            } while (cursor.moveToNext());
+        }
+
+        return workoutDays;
+    }
+
+    // Save workout day to db
+    public void saveWorkoutDay(String value) {
+
+        SQLiteDatabase database = getReadableDatabase();
+        String query = String.format("INSERT INTO " + WORKOUT_DAYS_TABLE_NAME + "(" + DAY_COLUMN_NAME + ")"
+                + " VALUES(%s)", value);
         database.execSQL(query);
     }
 }

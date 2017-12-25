@@ -5,10 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button exercisesButton, settingsButton, calendarButton;
+
+    ImageView trainingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         exercisesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten = new Intent(MainActivity.this, ListExercises.class);
-                startActivity(inten);
+                Intent intent = new Intent(MainActivity.this, ListExercises.class);
+                startActivity(intent);
             }
         });
 
@@ -28,13 +31,20 @@ public class MainActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten = new Intent(MainActivity.this, Settings.class);
-                startActivity(inten);
+                Intent intent = new Intent(MainActivity.this, Settings.class);
+                startActivity(intent);
             }
         });
 
         calendarButton = (Button) findViewById(R.id.calendar_button);
 
-
+        trainingButton = (ImageView) findViewById(R.id.training_button);
+        trainingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DailyTraining.class);
+                startActivity(intent);
+            }
+        });
     }
 }

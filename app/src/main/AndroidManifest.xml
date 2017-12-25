@@ -20,8 +20,12 @@
         </activity>
         <activity android:name=".ListExercises" />
         <activity android:name=".ViewExercise" />
-        <activity android:name=".Settings"></activity>
-        <receiver android:name=".AlarmNotificationReceiver"></receiver>
+        <activity android:name=".Settings" />
+
+        <receiver android:name=".AlarmNotificationReceiver" />
+
+        <activity android:name=".DailyTraining" />
+        <activity android:name=".Calendar"></activity>
     </application>
 
 </manifest>

@@ -61,7 +61,7 @@ public class ViewExercise extends AppCompatActivity {
 
                         @Override
                         public void onTick(long l) {
-                            timer.setText(""+l/1000);
+                            timer.setText("" + (l / 1000));
                         }
 
                         @Override
