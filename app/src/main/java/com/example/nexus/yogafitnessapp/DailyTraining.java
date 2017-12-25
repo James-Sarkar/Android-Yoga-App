@@ -163,7 +163,7 @@ public class DailyTraining extends AppCompatActivity {
 
                     restingTimeCountDown.cancel();
 
-                    if (exerciseId < exerciseList.size()) {
+                    if (exerciseId < exerciseList.size() - 1) {
                         showRestTime();
                         exerciseId++;
                         progressBar.setProgress(exerciseId);
@@ -259,6 +259,7 @@ public class DailyTraining extends AppCompatActivity {
         startButton.setVisibility(View.INVISIBLE);
         timerText.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.INVISIBLE);
+        exerciseName.setVisibility(View.INVISIBLE);
 
         getReadyLayout.setVisibility(View.VISIBLE);
 
