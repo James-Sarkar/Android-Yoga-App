@@ -58,7 +58,6 @@ public class ViewExercise extends AppCompatActivity {
                     }
 
                     new CountDownTimer(timeLimit, 1000) {
-
                         @Override
                         public void onTick(long l) {
                             timer.setText("" + (l / 1000));

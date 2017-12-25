@@ -15,13 +15,15 @@ import java.util.HashSet;
 
 public class WorkoutDoneDecorator implements DayViewDecorator {
 
-    HashSet<CalendarDay> list;
+    private HashSet<CalendarDay> list;
 
-    ColorDrawable colorDrawable;
+    private ColorDrawable colorDrawable;
+
+    private static final String colorHash = "#e57373";
 
     public WorkoutDoneDecorator(HashSet<CalendarDay> list) {
         this.list = list;
-        colorDrawable = new ColorDrawable(Color.parseColor("#e57373"));
+        colorDrawable = new ColorDrawable(Color.parseColor(colorHash));
     }
 
     @Override

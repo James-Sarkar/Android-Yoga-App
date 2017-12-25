@@ -34,7 +34,6 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     // Retrieve settings information from db
     public int getSettingsMode() {
-
         SQLiteDatabase database = getReadableDatabase();
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
@@ -50,7 +49,6 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     // Save settings to database, 0 = Easy, 1 = Medium, 2 = Hard
     public void saveSettingsMode(int value) {
-
         SQLiteDatabase database = getReadableDatabase();
         String query = "UPDATE " + SETTINGS_TABLE_NAME + " SET " + MODE_COLUMN_NAME + " = "  + value;
         database.execSQL(query);
@@ -58,7 +56,6 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     // Retrieve workout days from db
     public List<String> getWorkOutDays() {
-
         SQLiteDatabase database = getReadableDatabase();
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
@@ -71,7 +68,6 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
         List<String> workoutDays = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
-
             do {
                 workoutDays.add(cursor.getString(cursor.getColumnIndex(DAY_COLUMN_NAME)));
             } while (cursor.moveToNext());
@@ -82,7 +78,6 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     // Save workout day to db
     public void saveWorkoutDay(String value) {
-
         SQLiteDatabase database = getReadableDatabase();
         String query = String.format("INSERT INTO " + WORKOUT_DAYS_TABLE_NAME + "(" + DAY_COLUMN_NAME + ")"
                 + " VALUES(%s)", value);

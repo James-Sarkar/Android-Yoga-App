@@ -16,8 +16,6 @@ public class Calendar extends AppCompatActivity {
 
     MaterialCalendarView materialCalendarView;
 
-    HashSet<CalendarDay> list = new HashSet<>();
-
     YogaAndroidDB yogaAndroidDB;
 
     @Override

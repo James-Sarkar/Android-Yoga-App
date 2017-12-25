@@ -62,7 +62,6 @@ public class Settings extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 saveDifficultyMode();
 
                 saveAlarm(switchAlarm.isChecked());
@@ -74,7 +73,6 @@ public class Settings extends AppCompatActivity {
     }
 
     private void saveAlarm(boolean checked) {
-
         if (checked) {
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
@@ -104,7 +102,6 @@ public class Settings extends AppCompatActivity {
     }
 
     private void saveDifficultyMode() {
-
         int selectId = radioGroup.getCheckedRadioButtonId();
 
         if (selectId == easyButton.getId()) {
@@ -117,7 +114,6 @@ public class Settings extends AppCompatActivity {
     }
 
     private void setRadioButton(int mode) {
-
         if (mode == 0) {
             radioGroup.check(R.id.easy_button);
         } else if (mode == 1) {

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.nexus.yogafitnessapp.Utils.DataInitializer;
 import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
 import com.example.nexus.yogafitnessapp.Model.Exercise;
 import com.example.nexus.yogafitnessapp.Utils.Common;
@@ -31,7 +32,7 @@ public class DailyTraining extends AppCompatActivity {
 
     LinearLayout getReadyLayout;
 
-    int exerciseId, timeLimit = 0;
+    int exerciseId;
 
     List<Exercise> exerciseList = new ArrayList<>();
 
@@ -39,7 +40,6 @@ public class DailyTraining extends AppCompatActivity {
 
     // Countdowns
     CountDownTimer exerciseEasyModeCountDown = new CountDownTimer(Common.TIME_LIMIT_EASY, 1000) {
-
         @Override
         public void onTick(long millisUntilFinished) {
             timerText.setText("" + (millisUntilFinished / 1000));
@@ -61,7 +61,6 @@ public class DailyTraining extends AppCompatActivity {
     };
 
     CountDownTimer exerciseMediumModeCountDown = new CountDownTimer(Common.TIME_LIMIT_MEDIUM, 1000) {
-
         @Override
         public void onTick(long millisUntilFinished) {
             timerText.setText("" + (millisUntilFinished / 1000));
@@ -83,7 +82,6 @@ public class DailyTraining extends AppCompatActivity {
     };
 
     CountDownTimer exerciseHardModeCountDown = new CountDownTimer(Common.TIME_LIMIT_HARD, 1000) {
-
         @Override
         public void onTick(long millisUntilFinished) {
             timerText.setText("" + (millisUntilFinished / 1000));
@@ -105,7 +103,6 @@ public class DailyTraining extends AppCompatActivity {
     };
 
     CountDownTimer restingTimeCountDown = new CountDownTimer(10000, 1000) {
-
         @Override
         public void onTick(long millisUntilFinished) {
             countDownText.setText("" + (millisUntilFinished / 1000));
@@ -123,7 +120,7 @@ public class DailyTraining extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_training);
 
-        initData();
+        DataInitializer.initData(exerciseList);
 
         yogaAndroidDB = new YogaAndroidDB(this);
 
@@ -152,7 +149,6 @@ public class DailyTraining extends AppCompatActivity {
                     showGetReady();
                     startButton.setText("Done");
                 } else if (startButton.getText().toString().toLowerCase().equals("done")) {
-
                     if (yogaAndroidDB.getSettingsMode() == 0) {
                         exerciseEasyModeCountDown.cancel();
                     } else if (yogaAndroidDB.getSettingsMode() == 1) {
@@ -193,7 +189,6 @@ public class DailyTraining extends AppCompatActivity {
     }
 
     private void showRestTime() {
-
         exerciseImage.setVisibility(View.INVISIBLE);
         timerText.setVisibility(View.INVISIBLE);
 
@@ -208,7 +203,6 @@ public class DailyTraining extends AppCompatActivity {
     }
 
     private void showGetReady() {
-
         exerciseImage.setVisibility(View.INVISIBLE);
         startButton.setVisibility(View.INVISIBLE);
 
@@ -231,7 +225,6 @@ public class DailyTraining extends AppCompatActivity {
     }
 
     private void showExercises() {
-
         if (exerciseId < exerciseList.size()) {
             exerciseImage.setVisibility(View.VISIBLE);
             startButton.setVisibility(View.VISIBLE);
@@ -254,7 +247,6 @@ public class DailyTraining extends AppCompatActivity {
     }
 
     private void showDone() {
-
         exerciseImage.setVisibility(View.INVISIBLE);
         startButton.setVisibility(View.INVISIBLE);
         timerText.setVisibility(View.INVISIBLE);
@@ -272,7 +264,6 @@ public class DailyTraining extends AppCompatActivity {
     }
 
     private void setExerciseInformation(int exerciseId) {
-
         exerciseImage.setImageResource(exerciseList.get(exerciseId).getImageId());
         exerciseName.setText(exerciseList.get(exerciseId).getName());
 
@@ -283,20 +274,5 @@ public class DailyTraining extends AppCompatActivity {
         timerText.setVisibility(View.VISIBLE);
 
         getReadyLayout.setVisibility(View.INVISIBLE);
-    }
-
-    private void initData() {
-
-        exerciseList.add(new Exercise(R.drawable.easy_pose, "Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.cobra_pose, "Cobra Pose"));
-        exerciseList.add(new Exercise(R.drawable.downward_facing_dog, "Downward Facing Dog"));
-        exerciseList.add(new Exercise(R.drawable.boat_pose, "Boat Pose"));
-        exerciseList.add(new Exercise(R.drawable.half_pigeon, "Half Pigeon"));
-        exerciseList.add(new Exercise(R.drawable.low_lunge, "Low Lunge"));
-        exerciseList.add(new Exercise(R.drawable.upward_bow, "Upward Bow"));
-        exerciseList.add(new Exercise(R.drawable.crescent_lunge, "Crescent Lunge"));
-        exerciseList.add(new Exercise(R.drawable.warrior_pose, "Warrior Pose I"));
-        exerciseList.add(new Exercise(R.drawable.bow_pose, "Bow Pose"));
-        exerciseList.add(new Exercise(R.drawable.warrior_pose_2, "Warrior Pose II"));
     }
 }

@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.nexus.yogafitnessapp.Interface.ItemClickListener;
 import com.example.nexus.yogafitnessapp.Model.Exercise;
@@ -39,7 +38,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder
         itemView.setOnClickListener(this);
     }
 
-    public void setItemClickListener(ItemClickListener itemClickListener) {
+    void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 
@@ -76,7 +75,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-
                 // Call new activity
                 Intent intent = new Intent(context, ViewExercise.class);
                 intent.putExtra("imageId", exerciseList.get(position).getImageId());
