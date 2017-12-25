@@ -8,6 +8,13 @@
     tools:context="com.example.nexus.yogafitnessapp.MainActivity">
 
     <ImageView
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
         android:id="@+id/training_button"
         android:layout_centerInParent="true"
         android:src="@drawable/play"
