@@ -80,7 +80,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
                 Intent intent = new Intent(context, ViewExercise.class);
                 intent.putExtra("imageId", exerciseList.get(position).getImageId());
                 intent.putExtra("name", exerciseList.get(position).getName());
-                
+
                 context.startActivity(intent);
             }
         });
