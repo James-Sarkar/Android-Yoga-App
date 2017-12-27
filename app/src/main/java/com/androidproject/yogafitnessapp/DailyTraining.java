@@ -49,10 +49,13 @@ public class DailyTraining extends AppCompatActivity {
         public void onFinish() {
             if (exerciseId < exerciseList.size() - 1) {
                 exerciseId++;
+
                 progressBar.setProgress(exerciseId);
+
                 timerText.setText("");
 
                 setExerciseInformation(exerciseId);
+
                 startButton.setText("Start");
             } else {
                 showDone();
@@ -70,10 +73,13 @@ public class DailyTraining extends AppCompatActivity {
         public void onFinish() {
             if (exerciseId < exerciseList.size() - 1) {
                 exerciseId++;
+
                 progressBar.setProgress(exerciseId);
+
                 timerText.setText("");
 
                 setExerciseInformation(exerciseId);
+
                 startButton.setText("Start");
             } else {
                 showDone();
@@ -91,10 +97,13 @@ public class DailyTraining extends AppCompatActivity {
         public void onFinish() {
             if (exerciseId < exerciseList.size() - 1) {
                 exerciseId++;
+
                 progressBar.setProgress(exerciseId);
+
                 timerText.setText("");
 
                 setExerciseInformation(exerciseId);
+
                 startButton.setText("Start");
             } else {
                 showDone();
@@ -111,6 +120,7 @@ public class DailyTraining extends AppCompatActivity {
         @Override
         public void onFinish() {
             setExerciseInformation(exerciseId);
+
             showExercises();
         }
     };
@@ -147,6 +157,7 @@ public class DailyTraining extends AppCompatActivity {
             public void onClick(View v) {
                 if (startButton.getText().toString().toLowerCase().equals("start")) {
                     showGetReady();
+
                     startButton.setText("Done");
                 } else if (startButton.getText().toString().toLowerCase().equals("done")) {
                     if (yogaAndroidDB.getSettingsMode() == 0) {
@@ -161,8 +172,11 @@ public class DailyTraining extends AppCompatActivity {
 
                     if (exerciseId < exerciseList.size() - 1) {
                         showRestTime();
+
                         exerciseId++;
+
                         progressBar.setProgress(exerciseId);
+
                         timerText.setText("");
                     } else {
                         showDone();
@@ -210,6 +224,7 @@ public class DailyTraining extends AppCompatActivity {
         getReadyLayout.setVisibility(View.VISIBLE);
 
         getReadyText.setText("Get Ready");
+
         new CountDownTimer(6000, 1000) {
 
             @Override
@@ -256,6 +271,7 @@ public class DailyTraining extends AppCompatActivity {
         getReadyLayout.setVisibility(View.VISIBLE);
 
         getReadyText.setText("Done!");
+
         countDownText.setText("Congratulations! \n You are done with today's exercise");
         countDownText.setTextSize(20);
 

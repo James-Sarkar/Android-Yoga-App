@@ -30,8 +30,11 @@ public class ListExercises extends AppCompatActivity {
         DataInitializer.initData(exerciseList);
 
         recyclerView = (RecyclerView) findViewById(R.id.list_exercises);
+
         recyclerViewAdapter = new RecyclerViewAdapter(exerciseList, getBaseContext());
+
         layoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
     }

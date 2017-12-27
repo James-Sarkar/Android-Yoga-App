@@ -39,8 +39,18 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // Initialize view
         saveButton = (Button) findViewById(R.id.save_button);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDifficultyMode();
+
+                saveAlarm(switchAlarm.isChecked());
+
+                Toast.makeText(Settings.this, "Difficulty Level Saved!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
 
         easyButton = (RadioButton) findViewById(R.id.easy_button);
         mediumButton = (RadioButton) findViewById(R.id.medium_button);
@@ -57,19 +67,6 @@ public class Settings extends AppCompatActivity {
         int mode = yogaAndroidDB.getSettingsMode();
 
         setRadioButton(mode);
-
-        // Events
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveDifficultyMode();
-
-                saveAlarm(switchAlarm.isChecked());
-                
-                Toast.makeText(Settings.this, "Difficulty Level Saved!", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
     }
 
     private void saveAlarm(boolean checked) {
@@ -85,11 +82,12 @@ public class Settings extends AppCompatActivity {
 
             // Set time for te alarm
             Calendar calendar = Calendar.getInstance();
-            Date today = Calendar.getInstance().getTime();
-            calendar.set(today.getYear(), today.getMonth(), today.getDay(), timePicker.getHour(), timePicker.getMinute());
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
-            Log.d("DEBUG", "Alarm:                                   "+timePicker.getHour()+":"+timePicker.getMinute());
+            Date today = Calendar.getInstance().getTime();
+
+            calendar.set(today.getYear(), today.getMonth(), today.getDay(), timePicker.getHour(), timePicker.getMinute());
+
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         } else {
             // Cancel alarm
             Intent intent = new Intent(Settings.this, AlarmNotificationReceiver.class);

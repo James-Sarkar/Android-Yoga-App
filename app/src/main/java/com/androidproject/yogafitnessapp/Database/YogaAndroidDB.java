@@ -50,7 +50,9 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
     // Save settings to database, 0 = Easy, 1 = Medium, 2 = Hard
     public void saveSettingsMode(int value) {
         SQLiteDatabase database = getReadableDatabase();
+
         String query = "UPDATE " + SETTINGS_TABLE_NAME + " SET " + MODE_COLUMN_NAME + " = "  + value;
+
         database.execSQL(query);
     }
 
@@ -79,8 +81,10 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
     // Save workout day to db
     public void saveWorkoutDay(String value) {
         SQLiteDatabase database = getReadableDatabase();
+
         String query = String.format("INSERT INTO " + WORKOUT_DAYS_TABLE_NAME + "(" + DAY_COLUMN_NAME + ")"
                 + " VALUES(%s)", value);
+
         database.execSQL(query);
     }
 }
