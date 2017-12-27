@@ -1,10 +1,10 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.nexus.yogafitnessapp.Custom.WorkoutDoneDecorator;
-import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
+import com.androidproject.yogafitnessapp.Custom.WorkoutDoneDecorator;
+import com.androidproject.yogafitnessapp.Database.YogaAndroidDB;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 

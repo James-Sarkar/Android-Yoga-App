@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Custom;
+package com.androidproject.yogafitnessapp.Custom;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

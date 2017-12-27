@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -15,7 +15,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
+import com.androidproject.yogafitnessapp.Database.YogaAndroidDB;
 
 import java.util.Calendar;
 import java.util.Date;

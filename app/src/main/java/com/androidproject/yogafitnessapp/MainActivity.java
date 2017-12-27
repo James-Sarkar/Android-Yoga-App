@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

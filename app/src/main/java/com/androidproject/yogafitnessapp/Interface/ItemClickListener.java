@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Interface;
+package com.androidproject.yogafitnessapp.Interface;
 
 import android.view.View;
 

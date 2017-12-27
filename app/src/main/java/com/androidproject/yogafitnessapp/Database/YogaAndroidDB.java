@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Database;
+package com.androidproject.yogafitnessapp.Database;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Model;
+package com.androidproject.yogafitnessapp.Model;
 
 /**
  * Created by James Sarkar.

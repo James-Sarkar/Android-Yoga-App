@@ -1,13 +1,13 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.nexus.yogafitnessapp.Adapter.RecyclerViewAdapter;
-import com.example.nexus.yogafitnessapp.Utils.DataInitializer;
-import com.example.nexus.yogafitnessapp.Model.Exercise;
+import com.androidproject.yogafitnessapp.Adapter.RecyclerViewAdapter;
+import com.androidproject.yogafitnessapp.Utils.DataInitializer;
+import com.androidproject.yogafitnessapp.Model.Exercise;
 
 import java.util.ArrayList;
 import java.util.List;

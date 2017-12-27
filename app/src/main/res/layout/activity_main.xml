@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back"
-    tools:context="com.example.nexus.yogafitnessapp.MainActivity">
+    tools:context="com.androidproject.yogafitnessapp.MainActivity">
 
     <ImageView
         android:src="@drawable/logo"

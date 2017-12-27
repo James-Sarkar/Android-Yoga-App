@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.nexus.yogafitnessapp.Utils.DataInitializer;
-import com.example.nexus.yogafitnessapp.Database.YogaAndroidDB;
-import com.example.nexus.yogafitnessapp.Model.Exercise;
-import com.example.nexus.yogafitnessapp.Utils.Common;
+import com.androidproject.yogafitnessapp.Utils.DataInitializer;
+import com.androidproject.yogafitnessapp.Database.YogaAndroidDB;
+import com.androidproject.yogafitnessapp.Model.Exercise;
+import com.androidproject.yogafitnessapp.Utils.Common;
 
 import java.util.ArrayList;
 import java.util.Calendar;

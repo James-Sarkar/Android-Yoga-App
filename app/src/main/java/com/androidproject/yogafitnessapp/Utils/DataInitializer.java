@@ -1,7 +1,7 @@
-package com.example.nexus.yogafitnessapp.Utils;
+package com.androidproject.yogafitnessapp.Utils;
 
-import com.example.nexus.yogafitnessapp.Model.Exercise;
-import com.example.nexus.yogafitnessapp.R;
+import com.androidproject.yogafitnessapp.Model.Exercise;
+import com.androidproject.yogafitnessapp.R;
 
 import java.util.List;
 

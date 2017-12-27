@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Adapter;
+package com.androidproject.yogafitnessapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.nexus.yogafitnessapp.Interface.ItemClickListener;
-import com.example.nexus.yogafitnessapp.Model.Exercise;
-import com.example.nexus.yogafitnessapp.R;
-import com.example.nexus.yogafitnessapp.ViewExercise;
+import com.androidproject.yogafitnessapp.Interface.ItemClickListener;
+import com.androidproject.yogafitnessapp.Model.Exercise;
+import com.androidproject.yogafitnessapp.R;
+import com.androidproject.yogafitnessapp.ViewExercise;
 
 import java.util.List;
 

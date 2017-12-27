@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp.Utils;
+package com.androidproject.yogafitnessapp.Utils;
 
 /**
  * Created by James Sarkar.

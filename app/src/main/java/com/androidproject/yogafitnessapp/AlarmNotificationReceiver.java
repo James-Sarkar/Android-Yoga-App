@@ -1,4 +1,4 @@
-package com.example.nexus.yogafitnessapp;
+package com.androidproject.yogafitnessapp;
 
 import android.app.Notification;
 import android.app.NotificationManager;
