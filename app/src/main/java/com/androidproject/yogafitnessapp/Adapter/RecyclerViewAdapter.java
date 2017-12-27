@@ -62,6 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
         View itemView = inflater.inflate(R.layout.item_exercise, parent, false);
 
         return new RecyclerViewHolder(itemView);
@@ -79,6 +80,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
                 Intent intent = new Intent(context, ViewExercise.class);
                 intent.putExtra("imageId", exerciseList.get(position).getImageId());
                 intent.putExtra("name", exerciseList.get(position).getName());
+                
                 context.startActivity(intent);
             }
         });
