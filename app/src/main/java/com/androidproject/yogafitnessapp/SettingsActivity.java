@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -20,19 +19,19 @@ import com.androidproject.yogafitnessapp.Database.YogaAndroidDB;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Settings extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
-    Button saveButton;
+    private Button saveButton;
 
-    RadioButton easyButton, mediumButton, hardButton;
+    private RadioButton easyButton, mediumButton, hardButton;
 
-    RadioGroup radioGroup;
+    private RadioGroup radioGroup;
 
-    YogaAndroidDB yogaAndroidDB;
+    private YogaAndroidDB yogaAndroidDB;
 
-    ToggleButton switchAlarm;
+    private ToggleButton switchAlarm;
 
-    TimePicker timePicker;
+    private TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class Settings extends AppCompatActivity {
 
                 saveAlarm(switchAlarm.isChecked());
 
-                Toast.makeText(Settings.this, "Difficulty Level Saved!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, "Difficulty Level Saved!", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -77,7 +76,7 @@ public class Settings extends AppCompatActivity {
 
             PendingIntent pendingIntent;
 
-            intent = new Intent(Settings.this, AlarmNotificationReceiver.class);
+            intent = new Intent(SettingsActivity.this, AlarmNotificationReceiver.class);
             pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
             // Set time for te alarm
@@ -90,7 +89,7 @@ public class Settings extends AppCompatActivity {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         } else {
             // Cancel alarm
-            Intent intent = new Intent(Settings.this, AlarmNotificationReceiver.class);
+            Intent intent = new Intent(SettingsActivity.this, AlarmNotificationReceiver.class);
 
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 

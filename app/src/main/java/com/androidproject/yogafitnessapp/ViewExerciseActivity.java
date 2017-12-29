@@ -12,21 +12,21 @@ import android.widget.Toast;
 import com.androidproject.yogafitnessapp.Database.YogaAndroidDB;
 import com.androidproject.yogafitnessapp.Utils.Common;
 
-public class ViewExercise extends AppCompatActivity {
+public class ViewExerciseActivity extends AppCompatActivity {
 
-    int imageId;
+    private int imageId;
 
-    String name;
+    private String name;
 
-    TextView title, timer;
+    private TextView title, timer;
 
-    ImageView imageDetail;
+    private ImageView imageDetail;
 
-    Button startButton;
+    private Button startButton;
 
-    boolean timerIsRunning = false;
+    private boolean timerIsRunning = false;
 
-    YogaAndroidDB yogaAndroidDB;
+    private YogaAndroidDB yogaAndroidDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +65,12 @@ public class ViewExercise extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
-                            Toast.makeText(ViewExercise.this, "Done!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ViewExerciseActivity.this, "Done!", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }.start();
                 } else {
-                    Toast.makeText(ViewExercise.this, "Done!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewExerciseActivity.this, "Done!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 

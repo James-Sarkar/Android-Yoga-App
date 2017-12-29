@@ -12,41 +12,13 @@ import android.widget.TextView;
 import com.androidproject.yogafitnessapp.Interface.ItemClickListener;
 import com.androidproject.yogafitnessapp.Model.Exercise;
 import com.androidproject.yogafitnessapp.R;
-import com.androidproject.yogafitnessapp.ViewExercise;
+import com.androidproject.yogafitnessapp.ViewExerciseActivity;
 
 import java.util.List;
 
 /**
  * Created by James Sarkar.
  */
-
-class RecyclerViewHolder extends RecyclerView.ViewHolder
-    implements View.OnClickListener{
-
-    ImageView image;
-
-    TextView name;
-
-    private ItemClickListener itemClickListener;
-
-    public RecyclerViewHolder(View itemView) {
-        super(itemView);
-
-        image = (ImageView) itemView.findViewById(R.id.exercise_image);
-        name = (TextView) itemView.findViewById(R.id.exercise_name);
-
-        itemView.setOnClickListener(this);
-    }
-
-    void setItemClickListener(ItemClickListener itemClickListener) {
-        this.itemClickListener = itemClickListener;
-    }
-
-    @Override
-    public void onClick(View view) {
-        itemClickListener.onClick(view, getAdapterPosition());
-    }
-}
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
@@ -77,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
             @Override
             public void onClick(View view, int position) {
                 // Call new activity
-                Intent intent = new Intent(context, ViewExercise.class);
+                Intent intent = new Intent(context, ViewExerciseActivity.class);
                 intent.putExtra("imageId", exerciseList.get(position).getImageId());
                 intent.putExtra("name", exerciseList.get(position).getName());
 
@@ -89,5 +61,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     @Override
     public int getItemCount() {
         return exerciseList.size();
+    }
+}
+
+class RecyclerViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener{
+
+    ImageView image;
+
+    TextView name;
+
+    private ItemClickListener itemClickListener;
+
+    public RecyclerViewHolder(View itemView) {
+        super(itemView);
+
+        image = (ImageView) itemView.findViewById(R.id.exercise_image);
+        name = (TextView) itemView.findViewById(R.id.exercise_name);
+
+        itemView.setOnClickListener(this);
+    }
+
+    void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        itemClickListener.onClick(view, getAdapterPosition());
     }
 }

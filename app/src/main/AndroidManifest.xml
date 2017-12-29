@@ -18,14 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListExercises" />
-        <activity android:name=".ViewExercise" />
-        <activity android:name=".Settings" />
+        <activity android:name=".ListExercisesActivity" />
+        <activity android:name=".ViewExerciseActivity" />
+        <activity android:name=".SettingsActivity" />
 
         <receiver android:name=".AlarmNotificationReceiver" />
 
-        <activity android:name=".DailyTraining" />
-        <activity android:name=".Calendar"></activity>
+        <activity android:name=".DailyTrainingActivity" />
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>

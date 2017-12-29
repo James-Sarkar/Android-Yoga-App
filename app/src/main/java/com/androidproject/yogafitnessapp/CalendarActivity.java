@@ -12,11 +12,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
-public class Calendar extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
 
-    MaterialCalendarView materialCalendarView;
+    private MaterialCalendarView materialCalendarView;
 
-    YogaAndroidDB yogaAndroidDB;
+    private YogaAndroidDB yogaAndroidDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,15 +12,15 @@ import com.androidproject.yogafitnessapp.Model.Exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListExercises extends AppCompatActivity {
+public class ListExercisesActivity extends AppCompatActivity {
 
-    List<Exercise> exerciseList = new ArrayList<>();
+    private List<Exercise> exerciseList = new ArrayList<>();
 
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.LayoutManager layoutManager;
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
-    RecyclerViewAdapter recyclerViewAdapter;
+    private RecyclerViewAdapter recyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

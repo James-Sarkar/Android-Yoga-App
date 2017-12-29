@@ -19,11 +19,11 @@ public class WorkoutDoneDecorator implements DayViewDecorator {
 
     private ColorDrawable colorDrawable;
 
-    private static final String colorHash = "#e57373";
+    private static final String COLOUR_HASH = "#e57373";
 
     public WorkoutDoneDecorator(HashSet<CalendarDay> list) {
         this.list = list;
-        colorDrawable = new ColorDrawable(Color.parseColor(colorHash));
+        colorDrawable = new ColorDrawable(Color.parseColor(COLOUR_HASH));
     }
 
     @Override

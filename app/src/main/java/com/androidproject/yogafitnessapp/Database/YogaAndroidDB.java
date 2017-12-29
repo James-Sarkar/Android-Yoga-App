@@ -18,7 +18,7 @@ public class YogaAndroidDB extends SQLiteAssetHelper {
 
     private static final String DB_NAME = "YogaAndroid.db";
 
-    private static final String SETTINGS_TABLE_NAME = "Settings";
+    private static final String SETTINGS_TABLE_NAME = "SettingsActivity";
 
     private static final String WORKOUT_DAYS_TABLE_NAME = "WorkoutDays";
 

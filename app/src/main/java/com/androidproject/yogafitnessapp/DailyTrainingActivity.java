@@ -20,19 +20,19 @@ import java.util.List;
 
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
-public class DailyTraining extends AppCompatActivity {
+public class DailyTrainingActivity extends AppCompatActivity {
 
-    Button startButton;
+    private Button startButton;
 
-    ImageView exerciseImage;
+    private ImageView exerciseImage;
 
-    TextView getReadyText, countDownText, timerText, exerciseName;
+    private TextView getReadyText, countDownText, timerText, exerciseName;
 
-    MaterialProgressBar progressBar;
+    private MaterialProgressBar progressBar;
 
-    LinearLayout getReadyLayout;
+    private LinearLayout getReadyLayout;
 
-    int exerciseId;
+    private int exerciseId;
 
     List<Exercise> exerciseList = new ArrayList<>();
 
